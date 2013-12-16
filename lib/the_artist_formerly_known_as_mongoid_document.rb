@@ -16,4 +16,9 @@ module TheArtistFormerlyKnownAsMongoidDocument
       return super
     end
   end
+
+  def mongo_rdb_id_map
+    records = connection.select_rows("SELECT mongo_id, id FROM #{table_name}")
+    Hash[records]
+  end
 end

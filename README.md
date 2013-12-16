@@ -49,6 +49,12 @@ And of course you can still look for plain-old regular `id`s:
 Artist.find(1)
 ```
 
+### Mongo id and relational database id map
+
+Use ```#mongo_rdb_id_map``` to load up a ```Hash``` mapping all Mongo ids to
+the relational database's ids for a model.  This us useful for migrations and
+other one-off tasks, but be warned that it can be slow for large records.
+
 ### Note
 
 If you are using something like [FriendlyId], it is wise to put `extend

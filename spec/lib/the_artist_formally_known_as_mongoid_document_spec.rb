@@ -26,7 +26,12 @@ describe TheArtistFormerlyKnownAsMongoidDocument do
     it 'should raise and error if no record exists by the mongoid id' do
       expect{ Artist.find(unmatched_mongo_id) }.to raise_error( ActiveRecord::RecordNotFound ) 
     end
+  end
 
+  describe '.mongo_rdb_id_map' do
+    it 'should return a hash mapping mongo ids to relational database ids' do
+      expect( Artist.mongo_rdb_id_map ).to eq( { @prince.mongo_id => @prince.id } )
+    end
   end
 end
 
