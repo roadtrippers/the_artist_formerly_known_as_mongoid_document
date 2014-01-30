@@ -1,4 +1,5 @@
 require "the_artist_formerly_known_as_mongoid_document/version"
+require "the_artist_formerly_known_as_mongoid_document/object_functions"
 
 module TheArtistFormerlyKnownAsMongoidDocument
   # find by either the id proper or mongo_id
