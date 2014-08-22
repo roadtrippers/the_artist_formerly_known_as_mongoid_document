@@ -11,7 +11,7 @@ module TheArtistFormerlyKnownAsMongoidDocument
     id = args.first
     if args.count == 1 && !id.is_a?(Numeric) && id.to_s.match( /^[0-9a-fA-F]{24}$/ )
       found_by_mongo_id = where mongo_id: id
-      return super if found_by_mongo_id.count == 0
+      raise ActiveRecord::RecordNotFound if found_by_mongo_id.count == 0
       return found_by_mongo_id.first
     else
       return super
