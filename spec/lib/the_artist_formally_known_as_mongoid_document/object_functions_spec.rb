@@ -14,19 +14,19 @@ describe TheArtistFormerlyKnownAsMongoidDocument::ObjectFunctions do
 
   describe '.mongo_id?' do
     it 'should return true if the object is a string of a well-formed mongo id' do
-      expect( a_mongo_id.mongo_id? ).to be_true
+      expect( a_mongo_id.mongo_id? ).to be_truthy
     end
     it 'should return true if the object represents a well-formed mongo id' do
-      expect( an_object_representing_a_mongo_id.mongo_id? ).to be_true
+      expect( an_object_representing_a_mongo_id.mongo_id? ).to be_truthy
     end
     it 'should return false for numeric ids' do
-      expect( a_numeric_string.mongo_id? ).to be_false
+      expect( a_numeric_string.mongo_id? ).to be_falsy
     end
     it 'should return false for strings of text' do
-      expect( non_numeric_text.mongo_id? ).to be_false
+      expect( non_numeric_text.mongo_id? ).to be_falsy
     end
     it 'should return false for numbers' do
-      expect( a_number.mongo_id? ).to be_false
+      expect( a_number.mongo_id? ).to be_falsy
     end
   end
 end
